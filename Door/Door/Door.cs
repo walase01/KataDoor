@@ -56,59 +56,56 @@ namespace Door
             }
         }
 
-        public bool OpenDoor()
+        public void OpenDoor()
         {
             if(Open == false && unLocked == true && Close == true && Locked == false)
             {
                 Close = false;
                 Open = true;
-                return true;
             }
             else
             {
-                return false;
+                throw new Exception();
             }
         }
 
-        public bool CloseDoor()
+        public void CloseDoor()
         {
             if(Close == false && Open == true && Locked == false && unLocked == true)
             {
                 Open = false;
                 Close = true;
-                return true;
             }
             else
             {
-                return false;
+                throw new Exception();
             }
         }
 
-        public bool LockedDoor()
+        public void LockedDoor()
         {
             if(Close == true && unLocked == true && Open == false && Locked == false)
             {
                 unLocked = false;
                 Locked = true;
-                return Locked;
             }
             else
             {
-                return false;
+                throw new Exception();
             }
         }
 
-        public bool unLockedDoor(string key)
+        public void unLockedDoor(string key)
         {
             if(Open == false && Close == true && Locked == true && unLocked == false && Key == key)
             {
                 Locked = false;
                 unLocked = true;
-                return unLocked;
             }
             else
             {
-                return false;
+
+                throw new Exception();
             }
         }
 
