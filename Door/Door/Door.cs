@@ -28,7 +28,8 @@ namespace Door
             if(Key == key)
             {
                 Open = true;
-                Close = true;
+                unLocked = true;
+                
             }
         }
         public void OpenAndLocked(string key)
